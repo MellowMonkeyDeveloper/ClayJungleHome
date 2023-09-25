@@ -1,0 +1,41 @@
+.closeContainer{
+width: 90%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+margin-top: -150px;
+}
+.closeIcon{
+    width: 80px;
+    height: 80px;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  background-image: url("../images/brown-clay-textured-background-earth-tone-diy-creative-art-minimal-style.jpeg");
+  height: 100vh;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.ul {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.li {
+  list-style: none;
+  margin: 10px;
+}
+.li:hover {
+  scale: 1.2;
+}
+.a {
+  text-decoration: none;
+  font-family: "Clay3";
+  font-size: 48px;
+}

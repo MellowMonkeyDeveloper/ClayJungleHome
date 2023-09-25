@@ -1,0 +1,167 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.jungleCard {
+  background-image: url("../images/green-clay-textured-background-colorful-handmade-creative-art-abstract-style.jpeg");
+  background-size: contain;
+  width: 80%;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.headerContainer {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  font-family: "Clay3";
+  font-size: 42px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.detailsContainer {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.button {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 3px black;
+  background-size: contain;
+  background-image: url("../images/yellow-clay-textured-background-colorful-handmade-creative-art-abstract-style.jpeg");
+}
+.anchor {
+  text-decoration: none;
+  font-family: "Poppins";
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.imageContainer {
+  width: 80%;
+  margin-top: 30px;
+}
+.image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px black;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .jungleCard {
+    background-image: url("../images/green-clay-textured-background-colorful-handmade-creative-art-abstract-style.jpeg");
+    background-size: contain;
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .detailsContainer {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .details {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .header {
+    font-family: "Clay3";
+    font-size: 42px;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .imageContainer {
+    width: 40%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px black;
+  }
+}
+
+@media (min-width: 1024px) {
+  .jungleCard {
+    background-image: url("../images/green-clay-textured-background-colorful-handmade-creative-art-abstract-style.jpeg");
+    background-size: contain;
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .detailsContainer {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .details {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .header {
+    font-family: "Clay3";
+    font-size: 42px;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .imageContainer {
+    width: 40%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px black;
+  }
+}

@@ -1,0 +1,51 @@
+.enterSiteSection {
+    display: flex;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.imageContainer{
+    display: flex;
+    width: 100%;
+}
+.image{
+    height: 100%;
+    width: 100%;
+}
+
+.enterButtonContainer {
+    background-image: url('../images/brown-clay-textured-background-earth-tone-diy-creative-art-minimal-style.jpeg');
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+.enterButton {
+    font-family: 'Clay3';
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-size: contain;
+    font-size: 58px;
+    padding: 15px;
+    height: 80px;
+    box-shadow: 2px 2px 4px black;
+    background-image: url('../images/yellow-clay-textured-background-colorful-handmade-creative-art-abstract-style.jpeg');
+}
+
+.enterButton:hover{
+    scale: 1.1
+}
+
+.claypeimage{
+    width: 25%;
+    margin: 25px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px black;
+}
