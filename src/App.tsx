@@ -17,7 +17,7 @@ import mainMellowMonkey from "./images/clayJungleMAINBackground.png";
 import CollectionsCard, {
   CollectionsCardProps,
 } from "./components/CollectionsCard";
-import nftaki from "./images/nftaki.jpeg";
+import nftaki from "./images/nftaki.png";
 import snakeTrnas2 from "./images/transSnake2.png";
 
 function App() {
