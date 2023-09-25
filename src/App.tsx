@@ -15,14 +15,11 @@ import EnterSite from "./components/EnterSite";
 import mintromney from "./images/mintRomneyEdit2.png";
 import mainMellowMonkey from "./images/clayJungleMAINBackground.png";
 import CollectionsCard, {
-  CollectionsCardProps, 
+  CollectionsCardProps,
 } from "./components/CollectionsCard";
-import Landing from "./components/Landing";
-import snakeTrans from "./images/snakeTrans.png";
+import nftaki from "./images/nftaki.jpeg";
 import snakeTrnas2 from "./images/transSnake2.png";
-import clayjungleLogo from "./images/clayjungleBannerTrans.png";
-import clayjungleBanner from "./images/clayJungleTwitterBannerEdit.png";
-import claylogo from "./images/clayLogoYellow.png";
+
 function App() {
   const [load, setLoad] = useState<boolean>(false);
   const [expand, setExpand] = useState<boolean>(false);
@@ -185,6 +182,20 @@ function App() {
                       "First Mod for Claypez",
                       "Works as a CDL Driver and Crane Operator",
                       "CNFT Degen by night",
+                    ]}
+                    xlink=""
+                  />
+                </div>
+                <div className={styles.teamCardContainer}>
+                  <TeamCard
+                    memberImage={nftaki}
+                    position="Moderator"
+                    name="Akim"
+                    details={[
+                      "Goes by NFTAki",
+                      "Clay Jungle got him into NFTs",
+                      "Works as a Cloud Engineer",
+                      "Hobbies consist of walking his dog, cars, and vacations",
                     ]}
                     xlink=""
                   />
