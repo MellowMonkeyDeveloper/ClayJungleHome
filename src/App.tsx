@@ -6,19 +6,27 @@ import snake from "./images/snakekowski.png";
 import styles from "./App.module.css";
 import claype1 from "./images/claype1.png";
 import claype2 from "./images/claype2.png";
+import claype2Web from "./images/claype2.webp";
 import Jungle from "./components/Jungle";
 import RoadMapCard from "./components/RoadMapCard";
+import snakeWeb from "./images/snakekowski.webp";
 import TeamCard from "./components/TeamCard";
-import kirby from "./images/kirbyEdit2.png";
-import dominic from "./images/dominicEdit2.png";
-import EnterSite from "./components/EnterSite";
-import mintromney from "./images/mintRomneyEdit2.png";
-import mainMellowMonkey from "./images/clayJungleMAINBackground.png";
+
+import kirby from "./images/kirby.png";
+import kirbyWeb from "./images/kirby.webp";
+import nftakiWeb from "./images/nftaki (1).webp";
+import claypemation from "./images/QmY6e3tC9PQPKW4ucafczhoPSzuXanPdcdYVgKeWA5ch8A.sz_2317888.dims_1600x1600.anim_0.webp";
+import ImageLazy from "./components/ImageLazy";
+import mintromney from "./images/mintromney.png";
+import mintromneyWeb from "./images/mintromney.webp";
+import mainMellowMonkey from "./images/clayJungleFIXEDBACKGROUND.png";
+import mainMellowMonkeyWeb from "./images/clayJungleFIXEDBACKGROUND.webp";
 import CollectionsCard, {
   CollectionsCardProps,
 } from "./components/CollectionsCard";
 import nftaki from "./images/nftaki.png";
-import snakeTrnas2 from "./images/transSnake2.png";
+import snakeTrans2 from "./images/transSnake2.png";
+import snakeTrans2Web from "./images/transsnake2-65132a7e19666.webp";
 
 function App() {
   const [load, setLoad] = useState<boolean>(false);
@@ -40,28 +48,34 @@ function App() {
 
   const collections: CollectionsCardProps[] = [
     {
-      name: "Clay Monkeys",
+      name: "Mellow Monkeys",
       image: snake,
       altImage: "snakekowski",
       supply: 6000,
       jungle: "10-80",
       jpgstorelink: "https://www.jpg.store/collection/claypez?tab=activity",
+      webImage: snakeWeb,
+      alt: "snakekowski",
     },
     {
       name: "Claypemations",
       image: claype1,
-      altImage: "snakekowski",
+      altImage: "Claypemation",
       supply: 3333,
       jungle: "13-104",
       jpgstorelink: "https://www.jpg.store/collection/claypemationsbyclaypez",
+      webImage: claypemation,
+      alt: "Claypemation",
     },
     {
       name: "1 of 1",
       image: claype2,
-      altImage: "snakekowski",
+      altImage: "Claypez",
       supply: 1,
       jungle: "10-80",
       jpgstorelink: "https://www.jpg.store/collection/claypez1of1s",
+      webImage: claype2Web,
+      alt: "Claypez",
     },
   ];
 
@@ -84,23 +98,28 @@ function App() {
                   {!expand && (
                     <Menu className={styles.menu} onClick={handleExpand} />
                   )}
+                  
                 </div>
               </div>
             </div>
             <section className={styles.mellowImageSection}>
-              <img
+              <ImageLazy
+                imageStyle={styles.webImage}
                 className={styles.mellowImage}
+                alt="Mellow Monkey Background"
                 src={mainMellowMonkey}
-                alt=""
+                srcSet={mainMellowMonkeyWeb}
               />
             </section>
             <section className={styles.topSection}>
               <article id="about" className={styles.aboutSection}>
                 <div className={styles.aboutImageContainer}>
-                  <img
+                  <ImageLazy
+                    imageStyle={styles.webImage}
                     className={styles.aboutImage}
-                    src={snakeTrnas2}
-                    alt="snakekowski claype"
+                    alt="Snakekowski"
+                    src={snakeTrans2}
+                    srcSet={snakeTrans2Web}
                   />
                 </div>
                 <div className={styles.aboutCard}>
@@ -125,6 +144,8 @@ function App() {
                 <div className={styles.collectionCardsContainer}>
                   {collections.map((value: any) => (
                     <CollectionsCard
+                      webImage={value.webImage}
+                      alt={value.alt}
                       jungle={value.jungle}
                       supply={value.supply}
                       jpgstorelink={value.jpgstorelink}
@@ -158,6 +179,8 @@ function App() {
               <div className={styles.teamCardsContainer}>
                 <div className={styles.teamCardContainer}>
                   <TeamCard
+                    alt="Founder Kirby"
+                    memberImageWeb={kirbyWeb}
                     memberImage={kirby}
                     position="Founder"
                     name="Kirby"
@@ -174,6 +197,8 @@ function App() {
 
                 <div className={styles.teamCardContainer}>
                   <TeamCard
+                    alt="Team Member - Moderator - Mint Romney"
+                    memberImageWeb={mintromneyWeb}
                     memberImage={mintromney}
                     position="Moderator"
                     name="Brian"
@@ -188,6 +213,8 @@ function App() {
                 </div>
                 <div className={styles.teamCardContainer}>
                   <TeamCard
+                    alt="Team Member - Moderator - NFTAki"
+                    memberImageWeb={nftakiWeb}
                     memberImage={nftaki}
                     position="Moderator"
                     name="Akim"

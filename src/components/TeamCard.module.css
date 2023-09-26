@@ -18,11 +18,22 @@
 }
 .imageContainer{
     width: 100%;
+    display: flex;
+    border-top-right-radius: 25px;
+    justify-content: center;
+    padding-bottom: 15px;
+    margin: auto;
 }
 .image{
     width: 100%;
+    display: flex;
+    margin: auto;
+}
+.webImage{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    display: flex;
+    width: 100%;
 }
 .name{
     margin-bottom: 5px;
@@ -66,7 +77,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
     .container{
         display: flex;
-        width: 100%;
+        width: 70%;
         flex-direction: column;
         justify-content: center;
         align-items: center;

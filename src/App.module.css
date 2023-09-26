@@ -1,6 +1,9 @@
 .app {
   margin: 0px;
   padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .appContainerNone {
@@ -20,7 +23,6 @@
 }
 
 .navDetails{
-  position: absolute;
   z-index: 2;
   display: flex;
   width: 100%;
@@ -45,8 +47,7 @@
 
 .menu{
   color: white;
-  height: 120px;
-  width: 120px;
+
   margin-left: 260px;
 }
 
@@ -54,11 +55,27 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
+  margin: auto;
+  padding: 0px;
+  width: 100%;
+  border: none;
+  justify-content: center;
+  background-size: cover;
+  background-image: url('./images/clayjunglebackgroundKirby.webp');
 }
 
 .mellowImage{
   width: 100%;
+  margin: auto;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.webImage{
+ display: flex;
+ width: 100%;
 }
 
 .logoContainer{
@@ -237,7 +254,7 @@
 
 .teamCardContainer {
   display: flex;
-  width: 90%;
+  width: 70%;
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 30px;

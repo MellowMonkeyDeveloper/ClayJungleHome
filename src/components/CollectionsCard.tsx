@@ -1,4 +1,5 @@
 import styles from "./CollectionsCard.module.css";
+import ImageLazy from "./ImageLazy";
 
 export interface CollectionsCardProps {
   image: string;
@@ -7,6 +8,8 @@ export interface CollectionsCardProps {
   jungle: string;
   jpgstorelink: string;
   name: string;
+  webImage: string;
+  alt: string;
 }
 
 export default function CollectionsCard({
@@ -16,6 +19,8 @@ export default function CollectionsCard({
   jungle,
   jpgstorelink,
   name,
+  webImage,
+  alt
 }: CollectionsCardProps) {
   return (
     <div className={styles.collectionsCard}>
@@ -24,7 +29,7 @@ export default function CollectionsCard({
       </div>
       <div className={styles.cardContainer}>
         <div className={styles.imageContainer}>
-          <img className={styles.image} src={image} alt={altImage} />
+          <ImageLazy imageStyle={styles.webImage} alt={alt} className={styles.image} src={image} srcSet={webImage} />
         </div>
         <div className={styles.cardDetailsContainer}>
           <div className={styles.detailHeaderContainer}>

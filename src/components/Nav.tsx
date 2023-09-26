@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import styles from "./Nav.module.css";
 import { Close } from "@mui/icons-material";
 
+
 interface NavbarProps {
   close: Dispatch<SetStateAction<boolean>>
   expand: Dispatch<SetStateAction<boolean>>

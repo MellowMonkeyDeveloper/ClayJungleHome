@@ -1,6 +1,7 @@
 import snake from "../images/snakekowski.png";
 import styles from './Jungle.module.css'
-
+import snakeWeb from '../images/snakekowski.webp'
+import ImageLazy from "./ImageLazy";
 export default function Jungle() {
   return (
     <div className={styles.container}>
@@ -29,7 +30,7 @@ export default function Jungle() {
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <img className={styles.image} src={snake} alt="snakekowski" />
+        <ImageLazy imageStyle={styles.webImage} className={styles.image} src={snake} srcSet={snakeWeb} alt='Snakekowski' />
       </div>
     </div>
   );

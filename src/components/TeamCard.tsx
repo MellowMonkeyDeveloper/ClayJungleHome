@@ -1,13 +1,15 @@
 import xicon from "../images/Twitter-X-Icon-PNG.jpeg";
 import x from '../images/Twitter-X-App-Icon-PNG.png'
 import styles from './TeamCard.module.css'
-import { light } from "@mui/material/styles/createPalette";
+import ImageLazy from "./ImageLazy";
 export interface TeamCardProps {
   memberImage: string;
   name: string;
   details: string[];
   xlink: string;
   position: string;
+  alt: string;
+  memberImageWeb: any;
 }
 
 export default function TeamCard({
@@ -15,12 +17,14 @@ export default function TeamCard({
   name,
   details,
   xlink,
-  position
+  position,
+  alt,
+  memberImageWeb
 }: TeamCardProps) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img className={styles.image} src={memberImage} alt="team member" />
+        <ImageLazy imageStyle={styles.webImage} alt={alt} className={styles.image} src={memberImage} srcSet={memberImageWeb}/>
       </div>
       <div>
         <div className={styles.headerContainer}>
