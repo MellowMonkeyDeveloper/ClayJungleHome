@@ -1,6 +1,8 @@
 import styles from "./CollectionsCard.module.css";
 import ImageLazy from "./ImageLazy";
-
+import React from "react";
+import ImageFallback from "./ImageFallback";
+import { Suspense } from "react";
 export interface CollectionsCardProps {
   image: string;
   altImage: string;
@@ -12,6 +14,8 @@ export interface CollectionsCardProps {
   alt: string;
 }
 
+const LazyLoadImage = React.lazy(() => import("./ImageLazy"));
+
 export default function CollectionsCard({
   image,
   supply,
@@ -20,7 +24,7 @@ export default function CollectionsCard({
   jpgstorelink,
   name,
   webImage,
-  alt
+  alt,
 }: CollectionsCardProps) {
   return (
     <div className={styles.collectionsCard}>
@@ -29,13 +33,21 @@ export default function CollectionsCard({
       </div>
       <div className={styles.cardContainer}>
         <div className={styles.imageContainer}>
-          <ImageLazy imageStyle={styles.webImage} alt={alt} className={styles.image} src={image} srcSet={webImage} />
+          <Suspense fallback={<ImageFallback src={image} alt={alt} className={styles.image} imageStyle={styles.webImage}/>}>
+            <LazyLoadImage
+              imageStyle={styles.webImage}
+              alt={alt}
+              className={styles.image}
+              src={image}
+              srcSet={webImage}
+            />
+          </Suspense>
         </div>
         <div className={styles.cardDetailsContainer}>
           <div className={styles.detailHeaderContainer}>
             <div className={styles.labelHeadContainer}>
               <h4 className={styles.supplyHeader}>Supply</h4>
-            </div> 
+            </div>
             <div className={styles.labelContainer}>
               <h5 className={styles.supplySpan}>{supply}</h5>
             </div>

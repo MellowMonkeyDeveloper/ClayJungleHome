@@ -1,5 +1,4 @@
-import LazyLoad from "react-lazyload";
-
+import React from "react";
 export interface ImageLazyProps {
   srcSet: any;
   src: any;
@@ -13,16 +12,19 @@ export default function ImageLazy({
   srcSet,
   className,
   alt,
-  imageStyle
+  imageStyle,
 }: ImageLazyProps) {
   return (
-    <div style={{maxWidth: '100%'}}>
-      <LazyLoad height={500}>
-        <picture className={className}>
-          <source srcSet={srcSet} type="image/webp" media="(min-width: 480px)" style={{width: '100%', border: 'none'}}/>
-          <img className={imageStyle} src={src} alt={alt} />
-        </picture>
-      </LazyLoad>
+    <div style={{ maxWidth: "100%" }}>
+      <picture className={className}>
+        <source
+          srcSet={srcSet}
+          type="image/webp"
+          media="(min-width: 480px)"
+          style={{ width: "100%", border: "none" }}
+        />
+        <img className={imageStyle} src={src} alt={alt} />
+      </picture>
     </div>
   );
 }

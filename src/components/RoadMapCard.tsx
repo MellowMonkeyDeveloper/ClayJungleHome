@@ -1,5 +1,5 @@
 import styles from './RoadMap.module.css'
-
+import React from 'react';
 export interface RoadMapCardProps {
   array: string[];
   header: string

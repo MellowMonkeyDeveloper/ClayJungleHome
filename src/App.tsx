@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import React from "react";
 import { Lan, Menu } from "@mui/icons-material";
 import { Close } from "@mui/icons-material";
 import Nav from "./components/Nav";
@@ -11,7 +12,6 @@ import Jungle from "./components/Jungle";
 import RoadMapCard from "./components/RoadMapCard";
 import snakeWeb from "./images/snakekowski.webp";
 import TeamCard from "./components/TeamCard";
-
 import kirby from "./images/kirby.png";
 import kirbyWeb from "./images/kirby.webp";
 import nftakiWeb from "./images/nftaki (1).webp";
@@ -27,6 +27,13 @@ import CollectionsCard, {
 import nftaki from "./images/nftaki.png";
 import snakeTrans2 from "./images/transSnake2.png";
 import snakeTrans2Web from "./images/transsnake2-65132a7e19666.webp";
+import { Suspense } from "react";
+import ImageFallback from "./components/ImageFallback";
+
+const LazyLoadMellowBackground = React.lazy(
+  () => import("./components/ImageLazy")
+);
+const LazyLoadSnakekowski = React.lazy(() => import("./components/ImageLazy"));
 
 function App() {
   const [load, setLoad] = useState<boolean>(false);
@@ -98,29 +105,50 @@ function App() {
                   {!expand && (
                     <Menu className={styles.menu} onClick={handleExpand} />
                   )}
-                  
                 </div>
               </div>
             </div>
             <section className={styles.mellowImageSection}>
-              <ImageLazy
-                imageStyle={styles.webImage}
-                className={styles.mellowImage}
-                alt="Mellow Monkey Background"
-                src={mainMellowMonkey}
-                srcSet={mainMellowMonkeyWeb}
-              />
+              <Suspense
+                fallback={
+                  <ImageFallback
+                    imageStyle={styles.webImage}
+                    className={styles.mellowImage}
+                    alt="Mellow Monkey Background"
+                    src={mainMellowMonkey}
+                  />
+                }
+              >
+                <LazyLoadMellowBackground
+                  imageStyle={styles.webImage}
+                  className={styles.mellowImage}
+                  alt="Mellow Monkey Background"
+                  src={mainMellowMonkey}
+                  srcSet={mainMellowMonkeyWeb}
+                />
+              </Suspense>
             </section>
             <section className={styles.topSection}>
               <article id="about" className={styles.aboutSection}>
                 <div className={styles.aboutImageContainer}>
-                  <ImageLazy
-                    imageStyle={styles.webImage}
-                    className={styles.aboutImage}
-                    alt="Snakekowski"
-                    src={snakeTrans2}
-                    srcSet={snakeTrans2Web}
-                  />
+                  <Suspense
+                    fallback={
+                      <ImageFallback
+                        imageStyle={styles.webImage}
+                        className={styles.aboutImage}
+                        alt="Snakekowski"
+                        src={snakeTrans2}
+                      />
+                    }
+                  >
+                    <LazyLoadSnakekowski
+                      imageStyle={styles.webImage}
+                      className={styles.aboutImage}
+                      alt="Snakekowski"
+                      src={snakeTrans2}
+                      srcSet={snakeTrans2Web}
+                    />
+                  </Suspense>
                 </div>
                 <div className={styles.aboutCard}>
                   <div className={styles.aboutHeaderContainer}>
